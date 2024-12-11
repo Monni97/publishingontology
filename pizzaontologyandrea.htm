@@ -1,0 +1,208 @@
+
+
+
+    
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>/pizzaontologyandrea</title>
+
+<link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="/static/style.css">
+<style>table#footer td { padding: 5px; }</style>
+</head>
+
+
+
+<body>
+
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;<span class="sr-only">Close</span></button>
+        <h4 class="modal-title">User logout is handled by the Internet Archive</h4>
+      </div>
+      <div class="modal-body">You will be returned to this page after logout.</div>
+      <div class="modal-footer">
+        <a href="https://archive.org/account/logout?referer=http%3A//purl.archive.org/domain/pizzaontologyandrea" class="btn
+        btn-primary">Logout from the Internet Archive</a>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+        	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">PURL Administration</a>
+        </div>
+
+		<div id="navbar" class="navbar-collapse collapse">
+		    <ul class="nav navbar-nav navbar-left">
+				<li><a href="/help">help</a></li>
+            </ul>
+
+		    <ul class="nav navbar-nav navbar-right">
+                
+                <li><a href="/domain_search?q=andreamonaldini.phd@gmail.com&amp;q_type=uploader">show PURL domains for andreamonaldini.phd@gmail.com</a></li>
+                <li><a href="#" role="button" data-toggle="modal" data-target="#logoutModal">logout</a>
+                
+			</ul>
+
+            
+            <form action="/domain_search" class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" name="q" class="form-control" placeholder="PURL domain">
+                </div>
+                <button type="submit" class="btn btn-default">search</button>
+            </form>
+            
+
+
+		</div>
+    </div>
+</nav>
+
+        
+<div class="modal fade" id="savingModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Adding new PURL to domain</h4>
+      </div>
+      <div class="modal-body text-center">
+        <span class="glyphicon glyphicon-refresh animate-spinner"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+<div class="container">
+
+  
+
+<h1>Domain: /pizzaontologyandrea</h1>
+
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li class="active">Domain: /pizzaontologyandrea</li>
+</ol>
+
+<a href="/subdomains/pizzaontologyandrea">view subdomains</a>
+
+
+
+<h4>PURLs</h4>
+
+<div>
+<p>There are no PURLs in this domain.</p>
+</div>
+
+
+
+<h4>Add a new PURL to this domain</h4>
+<form class="form-inline" id="newpurl" method="POST" action="/new_purl/pizzaontologyandrea">
+  <div class="form-group">
+    <label for="name" class="control-label">name</label>
+    <input class="form-control" name="name" value="/pizzaontologyandrea">
+    <span class="help-block">example: /pizzaontologyandrea/duck</span>
+  </div>
+  <div class="form-group">
+    <label for="type" class="control-label">type</label>
+    <select name="type" id="type" class="form-control">
+    
+        
+            <option>301</option>
+        
+    
+        
+            <option selected="selected">302</option>
+        
+    
+        
+            <option>303</option>
+        
+    
+        
+            <option>307</option>
+        
+    
+        
+            <option>404</option>
+        
+    
+        
+            <option>410</option>
+        
+    
+        
+            <option>partial</option>
+        
+    
+    </select>
+    <span class="help-block">&nbsp;</span>
+  </div>
+  <div class="form-group">
+    <label for="target" class="control-label">target URL</label>
+    <input class="form-control" id="target" name="target" placeholder="http://" size="40">
+    <span class="help-block">example: http://example.org/</span>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-default">Add</button>
+    <span class="help-block">&nbsp;</span>
+  </div>
+</form>
+
+
+
+
+
+<div class="row">
+<div class="col-md-12">
+<p>&nbsp;</p>
+<table id="footer">
+<tr>
+<td><img src="/static/img/logo_IA-sm.png"/></td>
+<td>The PURL service is an initiative of the <a
+href="https://archive.org">Internet Archive</a>, a 501(c)(3) non-profit,<br>
+building a digital library of Internet sites and other cultural artifacts in
+digital form.<br>
+For help and assistance please email info@archive.org.</td>
+</tr>
+</table>
+</div>
+</div>
+
+</div>
+
+<script src="/static/jquery/jquery.js"></script>
+<script src="/static/bootstrap/js/bootstrap.js"></script>
+<script src="/static/app.js"></script>
+
+
+<script>
+$('#newpurl').submit(function() {
+    $('#savingModal').modal();
+});
+</script>
+
+
+</body>
+</html>
